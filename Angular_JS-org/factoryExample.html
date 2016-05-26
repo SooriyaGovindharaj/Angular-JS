@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Angular Js Org</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+    <script src="js/myApp.js"></script>
+     <script src="js/controller.js"></script>
+     <script src="js/factory.js"></script>
+</head>
+<body ng-app="factoryApp">
+    <!--/*Calculation this is service*/-->
+    <div ng-controller=" factoryController as math">
+        Enter first Number: <input type="number" ng-model="math.first"><br>
+        Enter second Number: <input type="number" ng-model="math.second"><br>
+        Select operation:
+        <select ng-model="math.default" >
+            <option  ng-repeat="op in math.operation">{{op}}</option>
+        </select><br>
+        <div ng-show="math.flag">
+            <span ng-repeat="op in math.operation">{{math.total(op)}}</span>
+        </div>
+        <button ng-click="math.cal()" name="show">Calculate</button>
+    </div>
+</body>
+</html>
